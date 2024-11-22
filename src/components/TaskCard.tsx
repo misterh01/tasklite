@@ -11,12 +11,10 @@ interface TaskCardProps {
   boardId: string;
   task: ITask;
   deleteTask: (id: string) => void;
-  // updateTask: (id: string, content: string) => void;
 }
 
 function TaskCard({ grabbing = false, boardId, task, deleteTask }: TaskCardProps) {
   const [hovered, setHovered] = useState(false);
-  // const [editMode, setEditMode] = useState(false);
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
 
@@ -34,11 +32,6 @@ function TaskCard({ grabbing = false, boardId, task, deleteTask }: TaskCardProps
     transition,
   }
 
-  // const toggleEditMode = () => {
-  //   setEditMode(!editMode);
-  //   setHovered(false);
-  // }
-
   if (isDragging) {
     return (
       <div
@@ -49,32 +42,6 @@ function TaskCard({ grabbing = false, boardId, task, deleteTask }: TaskCardProps
     )
   }
 
-
-  // if (editMode) {
-  //   return (
-  //     <div
-  //       ref={setNodeRef}
-  //       style={style}
-  //       {...attributes}
-  //       {...listeners}
-  //       className='bg-columnBackgroundColor p-2.5 h-[100px] min-h-[100px] rounded-lg cursor-grab items-center flex text-left relative'
-  //     >
-  //       <textarea
-  //         autoFocus
-  //         value={task.content}
-  //         placeholder="Task content here"
-  //         onBlur={toggleEditMode}
-  //         onKeyDown={(e) => {
-  //           if (e.key === 'Enter' && e.shiftKey) {
-  //             toggleEditMode()
-  //           }
-  //         }}
-  //         onChange={(e) => updateTask(task.id, e.target.value)}
-  //         className='task h-[90%] w-full resize-none border-none rounded bg-transparent focus:outline-none'
-  //       />
-  //     </div>
-  //   )
-  // }
 
   return (
     <Fragment>
