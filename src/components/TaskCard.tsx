@@ -1,15 +1,15 @@
 import { Fragment, useState } from "react";
-import { Task } from "../types";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from '@dnd-kit/utilities'
 import { useDisclosure } from "@nextui-org/react";
 import TaskModal from "./modals/TaskModal";
+import { ITask } from "../store";
 
 
 interface TaskCardProps {
   grabbing?: boolean;
   boardId: string;
-  task: Task;
+  task: ITask;
   deleteTask: (id: string) => void;
   // updateTask: (id: string, content: string) => void;
 }
