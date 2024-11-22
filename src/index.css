@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  font-family: "Fira Sans", sans-serif;
+  @apply bg-black text-white box-border;
+  @apply overflow-x-hidden;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-green-600 rounded-lg;
+}
+
+.task > ::-webkit-scrollbar-thumb {
+  @apply bg-green-600 rounded-2xl;
+}
+
+.hr-line {
+  @apply leading-[1em] relative text-[black] text-center h-[1.5em] opacity-50 border-0 before:content-[""] before:absolute before:w-full before:h-px before:left-0 before:top-2/4 after:content-[attr(data-content)] after:relative after:inline-block after:leading-[1.5em] after:text-[#818078] after:bg-[#fcfcfa] after:px-[0.5em] after:py-0;
+  outline: 0;
+}
+.hr-line:before {
+  background: linear-gradient(to right, transparent, #818078, transparent);
+}
+
+.eye__pupil {
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  border-radius: 50%;
+  animation: movePupil 2s infinite ease-in-out;
+  transform-origin: center center;
+}
+@keyframes movePupil {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-10px, -10px);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+}
