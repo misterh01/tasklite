@@ -114,6 +114,7 @@ const Board: FC<BoardProps> = (props) => {
         </CardBody>
         <CardFooter
           className="text-small justify-between cursor-pointer"
+          onClick={() => setLocation(`/boards/${props.board.id}`)}
         >
           <div className="w-[75%] truncate text-left">
             {props.board.title.length > 20 ? (
